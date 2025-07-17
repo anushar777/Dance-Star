@@ -18,5 +18,13 @@ def upload_files():
         user.save(os.path.join(UPLOAD_FOLDER, user.filename))
     return 'Files uploaded successfully', 200
 
+@app.route('/analyze', methods=['POST'])
+def analyze():
+    # Example: List uploaded files and do analysis
+    files = os.listdir(UPLOAD_FOLDER)
+    # Here you would add your actual analysis code
+    # For now, just return a message
+    return {'message': f'Analysis complete! Files: {files}'}, 200
+
 if __name__ == '__main__':
     app.run(debug=True) 
