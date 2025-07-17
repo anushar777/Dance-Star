@@ -194,9 +194,23 @@ function App() {
         <button 
           className="analysis"
           disabled={!choreographyFile || !userFile}
-          onClick={() => {
-            // Add your analysis logic here
-            console.log('Analyzing videos...');
+          onClick={async () => {
+            // Upload files first (if not already uploaded)
+            const formData = new FormData();
+            formData.append('choreography', choreographyFile);
+            formData.append('user', userFile);
+
+            await fetch('http://localhost:5000/upload', {
+              method: 'POST',
+              body: formData,
+            });
+
+            // Trigger analysis
+            const response = await fetch('http://localhost:5000/analyze', {
+              method: 'POST',
+            });
+            const result = await response.json();
+            alert('Analysis result: ' + result.message);
           }}
         >
           Begin Analysis
