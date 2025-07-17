@@ -1,12 +1,57 @@
-# React + Vite
+# 💃 Dance Star: AI-Powered Choreography Comparison Tool
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Dance Star** is an intelligent web-based platform that helps users compare their dance performance to a reference choreography. By analyzing movement timing, texture, and facial expressions, the tool delivers personalized feedback and improvement suggestions — all through an accessible interface designed for creativity and ease of use.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🎯 Features
 
-## Expanding the ESLint configuration
+- 🔍 **Pose & Expression Detection** using MediaPipe across >95% of video frames
+- 🎵 **Beat Synchronization** to align movements with music using Librosa
+- 🧠 **Movement Texture Analysis** classifies sharp vs. smooth transitions
+- 😐 **Facial Expression Matching** tracks emotional delivery throughout the performance
+- 📊 **Real-Time Feedback** with similarity score, timestamped suggestions, and ratings
+- 🌐 **Responsive Web UI** built in React with accessibility-first design
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+| Layer      | Tools                                       |
+|------------|---------------------------------------------|
+| Frontend   | React · HTML · CSS                          |
+| Backend    | Flask · Python                              |
+| ML/AI      | MediaPipe · OpenCV · Librosa · Scikit-learn |
+| Deployment | GitHub Pages (Frontend) · Render (Backend)  |
+
+---
+
+## 🚧 Project Status
+
+This repository is actively under development and currently includes:
+- [x] Basic layout and styling of the React frontend
+- [x] Placeholder UI components for choreography input
+- [ ] Pose and expression detection module integration
+- [ ] Feedback scoring engine
+- [ ] Side-by-side video player with overlay visualization
+
+---
+
+## 🔗 Getting Started
+
+### Prerequisites
+- Python 3.10+
+- Node.js and npm
+- Git and GitHub CLI (optional but recommended)
+
+### Setup
+```bash
+# Backend
+cd backend/
+pip install -r requirements.txt
+python app.py
+
+# Frontend
+cd frontend/
+npm install
+npm start
