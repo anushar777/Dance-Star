@@ -18,12 +18,34 @@ def upload_files():
         user.save(os.path.join(UPLOAD_FOLDER, user.filename))
     return 'Files uploaded successfully', 200
 
+
+def extract_frames(video_path, fps=10):
+    cap = cv2.VideoCapture(video_path)
+    frames = []
+    frame_rate = cap.get(cv2.CAP_PROP_FPS)
+    interval = int(frame_rate // fps)
+    count = 0
+    while cap.isOpened():
+        ret, frame = cap.read()
+        if not ret:
+            break
+        if count % interval == 0:
+            frames.append(frame)
+        count += 1
+    cap.release()
+    return frames
+
 @app.route('/analyze', methods=['POST'])
 def analyze():
     # Example: List uploaded files and do analysis
     files = os.listdir(UPLOAD_FOLDER)
-    # Here you would add your actual analysis code
-    # For now, just return a message
+    
+    #Analysis Code
+
+
+
+
+
     return {'message': f'Analysis complete! Files: {files}'}, 200
 
 if __name__ == '__main__':
