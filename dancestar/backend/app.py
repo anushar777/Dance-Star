@@ -1,3 +1,5 @@
+from contextlib import nullcontext
+from logging import NullHandler
 from flask import Flask, request
 import os
 import cv2  # OpenCV for video processing
@@ -7,6 +9,9 @@ import numpy as np
 app = Flask(__name__)
 UPLOAD_FOLDER = 'uploads'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
+choreography = None
+user= None
 
 @app.route('/upload', methods=['POST'])
 def upload_files():
@@ -41,6 +46,8 @@ def analyze():
     files = os.listdir(UPLOAD_FOLDER)
     
     #Analysis Code
+    choreoFrames = extract_frames(choreography)
+    userFrames = extract_frames(user)
 
 
 
