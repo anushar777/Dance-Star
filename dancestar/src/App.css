@@ -1,0 +1,248 @@
+
+  .app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 20vh;
+    background-color: #142553;
+  }
+
+  .app h1 {
+    color: white;
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+
+  .videorow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 20vh;
+    background-color: #0c1530;
+  }
+
+  .choreography, .uservideo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7587b4;
+    color: #051237;
+    height: 5vh;
+    width: 15vw;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0 100px;
+  }
+
+  .choreography h2, .uservideo h2 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  .fileupload {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    min-height: 40vh;
+    background-color: #0c1530;
+    padding: 40px 20px;
+    gap: 100px;
+  }
+
+  .upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+  }
+
+  .upload-area {
+    width: 100%;
+    min-height: 200px;
+    border: 2px dashed #7587b4;
+    border-radius: 12px;
+    background-color: #1a2142;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .upload-area:hover {
+    border-color: #9bb3e0;
+    background-color: #242b4a;
+  }
+
+  .upload-area.has-file {
+    border-color: #4caf50;
+    background-color: #1e3a1e;
+  }
+
+  .upload-area.has-error {
+    border-color: #f44336;
+    background-color: #3a1e1e;
+  }
+
+  .file-input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .upload-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    cursor: pointer;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .upload-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #aab1c5;
+  }
+
+  .upload-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .upload-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+  }
+
+  .upload-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    color: #9bb3e0;
+  }
+
+  .upload-formats {
+    font-size: 0.8rem;
+    color: #7587b4;
+    line-height: 1.4;
+  }
+
+  .file-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(75, 175, 80, 0.1);
+    border-radius: 8px;
+    color: #ffffff;
+  }
+
+  .file-icon {
+    font-size: 2rem;
+    margin-right: 15px;
+  }
+
+  .file-details {
+    flex: 1;
+  }
+
+  .file-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+    word-break: break-word;
+  }
+
+  .file-size {
+    color: #9bb3e0;
+    font-size: 0.9rem;
+  }
+
+  .remove-btn {
+    background: #f44336;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+  }
+
+  .remove-btn:hover {
+    background: #d32f2f;
+  }
+
+  .error-message {
+    color: #f44336;
+    background-color: rgba(244, 67, 54, 0.1);
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    text-align: center;
+    border: 1px solid rgba(244, 67, 54, 0.3);
+  }
+
+  .analysis {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: #7587b4;
+    color: #051237;
+    height: 5vh;
+    width: 15vw;
+    padding: 20px;
+
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .analysis:hover {
+    background-color: #9bb3e0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .analysis:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .analysis:disabled {
+    background-color: #4a5568;
+    color: #a0aec0;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .analysis-section {
+    background-color: #0c1530;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 15vh;
+  }
