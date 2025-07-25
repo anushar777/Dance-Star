@@ -4,6 +4,7 @@ from flask import Flask, request
 import os
 import cv2  # OpenCV for video processing
 import numpy as np
+import mediapipe as mp
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -49,11 +50,11 @@ def analyze():
     choreoFrames = extract_frames(choreography)
     userFrames = extract_frames(user)
 
+    
+
 
 
 
 
     return {'message': f'Analysis complete! Files: {files}'}, 200
 
-if __name__ == '__main__':
-    app.run(debug=True) 
