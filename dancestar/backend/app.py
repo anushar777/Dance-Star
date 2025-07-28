@@ -16,6 +16,7 @@ user= None
 
 @app.route('/upload', methods=['POST'])
 def upload_files():
+    global choreography, user
     choreography = request.files.get('choreography')
     user = request.files.get('user')
     if choreography and choreography.filename:
@@ -72,3 +73,4 @@ def analyze():
 
     return {'message': f'Analysis complete! Files: {files}'}, 200
 
+analyze()
