@@ -41,6 +41,9 @@ def extract_frames(video_path, fps=10):
     cap.release()
     return frames
 
+
+
+
 @app.route('/analyze', methods=['POST'])
 def analyze():
     # Example: List uploaded files and do analysis
@@ -50,7 +53,18 @@ def analyze():
     choreoFrames = extract_frames(choreography)
     userFrames = extract_frames(user)
 
+    mp_drawing = np.solutions.drawing_utils
+    mp_pose = mp.solutions.pose
+
+    cap = cv2.VideoCapture(0)
+    while cap.isOpened():
+        ret, frame =cap.read()
+        cv2.imshow('MediapipeFeed', frame)
+        if cv2.waitKey(10) & 0xFF == ord('q'):
+            break
     
+    cap.release()
+    cv2.destroyAllWindows()
 
 
 
